@@ -16,8 +16,10 @@ public class DeckTest {
             deck.drawCard();
         }
 
-        // 全てのデッキを引いた後はデッキが空になるなず
-        assertNull(deck.drawCard());
+        // デッキが空なのでIllegalStateExceptionをスローするはず
+        assertThrows(IllegalStateException.class, () -> {
+            deck.drawCard();
+        });    
     }
 
     @Test

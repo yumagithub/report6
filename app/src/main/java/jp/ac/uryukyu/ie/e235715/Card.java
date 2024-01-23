@@ -49,7 +49,7 @@ public class Card {
      */
     public int getValue() {
         switch (rank) {
-            case "2", "3", "4", "5", "6", "7", "8", "9", "10":
+            case "1","2", "3", "4", "5", "6", "7", "8", "9", "10":
                 return Integer.parseInt(rank);
 
             case "ジャック":
@@ -78,13 +78,13 @@ public class Card {
                 this.rank = String.valueOf(value);
                 break;
             case "エース":
-                this.rank = (value == 1) ? "エース（1）" : "エース（11）";
+                this.rank = (value == 1) ? "1" : "11";
                 break;
             default:
                 throw new IllegalArgumentException("無効なカードの数字: " + rank);
         }
     }
-
+    
     /**
      * カードのエースの値を1に変更するメソッド。
      * エースでない場合は何も行わない。
